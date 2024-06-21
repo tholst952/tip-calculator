@@ -14,7 +14,12 @@ export default function App() {
         onTipChange={setTip}
         friendTip={friendTip}
         onFriendTipChange={setFriendTip}
-      />
+      >
+        <option value={0}>Dissatisfied (0%)</option>
+        <option value={0.5 * 100}>It was okay (5%)</option>
+        <option value={0.1 * 100}>It was good (10%)</option>
+        <option value={0.2 * 100}>Absolutely amazing! (20%)</option>
+      </SelectPercentage>
       <OutputSummary bill={bill} tip={tip} friendTip={friendTip} />
       <Reset
         bill={bill}
@@ -41,7 +46,13 @@ function BillInput({ bill, onBillChange }) {
   );
 }
 
-function SelectPercentage({ tip, onTipChange, friendTip, onFriendTipChange }) {
+function SelectPercentage({
+  tip,
+  onTipChange,
+  friendTip,
+  onFriendTipChange,
+  children,
+}) {
   return (
     <div>
       <span>How did you like the service?</span>
@@ -50,21 +61,19 @@ function SelectPercentage({ tip, onTipChange, friendTip, onFriendTipChange }) {
         value={tip}
         onChange={(e) => onTipChange(Number(e.target.value))}
       >
-        <option value={0}>Dissatisfied (0%)</option>
-        <option value={(5 / 100) * 100}>It was okay (5%)</option>
-        <option value={(10 / 100) * 100}>It was good (10%)</option>
-        <option value={(20 / 100) * 100}>Absolutely amazing! (20%)</option>
+        {children}
       </select>
 
       <FriendPercentage
         friendTip={friendTip}
         onFriendTipChange={onFriendTipChange}
+        optionChildren={children}
       />
     </div>
   );
 }
 
-function FriendPercentage({ friendTip, onFriendTipChange }) {
+function FriendPercentage({ friendTip, onFriendTipChange, optionChildren }) {
   return (
     <div>
       <span>How did your friend like the service?</span>
@@ -73,10 +82,7 @@ function FriendPercentage({ friendTip, onFriendTipChange }) {
         value={friendTip}
         onChange={(e) => onFriendTipChange(Number(e.target.value))}
       >
-        <option value={0}>Dissatisfied (0%)</option>
-        <option value={(5 / 100) * 100}>It was okay (5%)</option>
-        <option value={(10 / 100) * 100}>It was good (10%)</option>
-        <option value={(20 / 100) * 100}>Absolutely amazing! (20%)</option>
+        {optionChildren}
       </select>
     </div>
   );
