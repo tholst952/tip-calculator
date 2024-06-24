@@ -1,4 +1,90 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+
 body {
-  font-family: sans-serif;
-  font-size: 18px;
+  background-color: #43c6ac; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #f8ffae,
+    #43c6ac
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #f8ffae,
+    #43c6ac
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: "Lato", sans-serif;
+  width: 100%;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+  font-size: 20px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.app {
+  width: 100%;
+  max-width: 440px;
+  background-color: #0e7490;
+  color: #fff;
+  padding: 30px 20px;
+  border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  position: relative;
+}
+
+.bill-input {
+  width: 250px;
+  margin-bottom: 20px;
+}
+
+.percentage-select {
+  width: 250px;
+  margin-bottom: 20px;
+}
+
+.summary-with-btn {
+  width: 100%;
+  background-color: #d66d75; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to bottom,
+    #e29587,
+    #d66d75
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to bottom,
+    #e29587,
+    #d66d75
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.reset-btn {
+  display: inline-block;
+  outline: none;
+  border: none;
+  width: 200px;
+  background-color: #f8f554;
+  color: #444;
+  padding: 12px 24px;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 14px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+.reset-btn:focus,
+.reset-btn:hover {
+  background-color: #bebc39;
 }
